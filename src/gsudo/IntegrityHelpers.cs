@@ -129,7 +129,14 @@ namespace gsudo
                     fileHash = sha256.ComputeHash(stream);
 
                 string fileHashString = BitConverter.ToString(fileHash).Replace("-", "").ToLowerInvariant();
-                if (fileHashString != "153eefb2eafa8b2b909854cc1f941350efb1170e179a299de8836b8ec5ce6a7a")
+                var expectedHash = RuntimeInformation.ProcessArchitecture switch
+                {
+                    Architecture.X64 => "153eefb2eafa8b2b909854cc1f941350efb1170e179a299de8836b8ec5ce6a7a",
+                    Architecture.Arm64 => "c90b649db04c4b52184c14a91e5ac87f30b9d35f41f2704b081add4f79b827d1",
+                    _ => string.Empty
+                };
+
+                if (fileHashString != expectedHash)
                 {
                     Logger.Instance.Log("W_HELPER_DLL_HASH_MISMATCH", LogLevel.Warning);
 #if !DEBUG || !DISABLE_INTEGRITY
