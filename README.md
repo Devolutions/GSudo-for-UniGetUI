@@ -1,9 +1,13 @@
 # A modified GSudo build for UniGetUI
 
+> [!IMPORTANT]
+> The active repository for the UniGetUI Elevator gsudo variant has moved to [Devolutions/gsudo-distro](https://github.com/Devolutions/gsudo-distro).
+> This repository will be made read-only and archived.
+
 This project is a modified version of [gerardog/gsudo](https://github.com/gerardog/gsudo) so it can only be executed by a digitally-signed UniGetUI process.
 
 > [!WARNING]  
-> Should you have security concerns or improvement ideas for/about `UniGetUI Elevator`, please let me know by opening an issue or contacting me directly via [this form](https://marticliment.com/contact/).
+> Should you have security concerns or improvement ideas for/about `UniGetUI Elevator`, please open an issue in [Devolutions/gsudo-distro](https://github.com/Devolutions/gsudo-distro) or contact me directly via [this form](https://marticliment.com/contact/).
 
 
 
